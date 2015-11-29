@@ -1,0 +1,20 @@
+# exclude patterns
+
+*~
+dicelib/*
+accounts/*
+client_body_temp/*
+fastcgi_temp/*
+library/*
+logs/*
+proxy_temp/*
+scgi_temp/*
+uwsgi_temp/*
+
+websocketpp/include/*
+websocketpp/lib/*
+websocketpp/gameServer
+websocketpp/gameServer.log
+
+# include patterns
+!.gitkeep
