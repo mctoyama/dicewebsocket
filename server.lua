@@ -98,7 +98,7 @@ end
 local server = require'websocket'.server.copas.listen
 {
    -- listen on port 8080
-   port = 9999,
+   port = 6666,
    -- the protocols field holds
    --   key: protocol name
    --   value: callback on new connection
