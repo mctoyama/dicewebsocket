@@ -1,5 +1,5 @@
 ----------------------------------------------------------------------------------
--- Copyright 2015 Marcelo Costa Toyama
+-- Copyright 2016 Marcelo Costa Toyama
 --
 -- This file is part of PixelnDice.
 --
@@ -20,9 +20,6 @@
 
 package.path = package.path..";"..'/usr/share/lua/5.1/?.lua;/usr/local/share/lua/5.1/?.lua;/var/www/dicewsocket/?.lua;/var/www/dicelib/?.lua;;'
 package.cpath = package.cpath..";"..'/usr/local/lib/lua/5.1/?.so;/usr/lib/i386-linux-gnu/lua/5.1/?.so;;'
-
-
-
 
 local copas = require('copas')
 local json = require("json")
@@ -216,7 +213,19 @@ local server = require'websocket'.server.copas.listen
                elseif( packet.CMD == "DELETETOKEN" ) then
                   deliver(packet.FROM,packet.TO,packet.CMD,{MAPID=packet.MAPID,UUID=packet.UUID})
                elseif( packet.CMD == "UPDATETOKEN" ) then
-                  deliver(packet.FROM,packet.TO,packet.CMD,{MAPID=packet.MAPID,TOKENUUID=packet.TOKENUUID,JSON=packet.JSON})
+                  deliver(packet.FROM,packet.TO,packet.CMD,{MAPID=packet.MAPID,JSON=packet.JSON})
+               elseif( packet.CMD == "UPDATETURN" ) then
+                  deliver(packet.FROM,packet.TO,packet.CMD,{MAPID=packet.MAPID,JSON=packet.JSON})
+               elseif( packet.CMD == "REMOVETURN" ) then
+                  deliver(packet.FROM,packet.TO,packet.CMD,{UUID=packet.UUID})
+               elseif( packet.CMD == "DISPLAYTURN" ) then
+                  deliver(packet.FROM,packet.TO,packet.CMD,{FLAG=packet.FLAG})
+               elseif( packet.CMD == "ASCENDTURN" ) then
+                  deliver(packet.FROM,packet.TO,packet.CMD,{})
+               elseif( packet.CMD == "DESCENDTURN" ) then
+                  deliver(packet.FROM,packet.TO,packet.CMD,{})
+               elseif( packet.CMD == "NEXTTURN" ) then
+                  deliver(packet.FROM,packet.TO,packet.CMD,{})
                else
                   deliver("SYSTEM",packet.FROM,"ERROR",{MESSAGE="Invalid CMD: "..packet.CMD})
                end

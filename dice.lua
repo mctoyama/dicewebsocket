@@ -1,5 +1,5 @@
 ----------------------------------------------------------------------------------
--- Copyright 2015 Marcelo Costa Toyama
+-- Copyright 2016 Marcelo Costa Toyama
 --
 -- This file is part of PixelnDice.
 --

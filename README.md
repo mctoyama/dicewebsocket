@@ -1,8 +1,8 @@
 # Dice
-*Copyright Marcelo Costa Toyama 2015*
+*Copyright Marcelo Costa Toyama 2016*
 
 Dice is a open source web tool for playing RPG.
 
-http://keplerproject.github.io/copas/manual.html#install
+See for more information
 
-https://github.com/lipp/lua-websockets
+https://github.com/mctoyama/dice
